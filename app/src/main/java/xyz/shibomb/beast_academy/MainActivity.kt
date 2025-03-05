@@ -16,15 +16,16 @@ class MainActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
+        // hide the navigation bar and the status bar
         window.decorView.windowInsetsController?.hide(
             WindowInsets.Type.statusBars() or WindowInsets.Type.navigationBars()
         )
 
         setContentView(R.layout.activity_main)
 
+        // Open the web page in the current WebView
         myWebView = findViewById(R.id.webview)
-        myWebView.webViewClient = WebViewClient()  // Open the web page in the current WebView
+        myWebView.webViewClient = WebViewClient()
 
         // Set the custom User-Agent for Pixel Tablet with Chrome and latest WebKit
         val userAgent = "Mozilla/5.0 (iPad; CPU OS 16_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.4 Safari/605.1.15"
@@ -32,27 +33,11 @@ class MainActivity : Activity() {
 
         // Enable JavaScript
         myWebView.settings.javaScriptEnabled = true
-        // Enable media playback
-        myWebView.settings.mediaPlaybackRequiresUserGesture = false // Allow autoplay of media
-
-        // more options to get the speaker to play
-        myWebView.settings.domStorageEnabled = true
-        myWebView.settings.setSupportMultipleWindows(false)
 
         // Disable Scroll bounce
         myWebView.overScrollMode = View.OVER_SCROLL_NEVER
 
-
-
         // Load the URL
         myWebView.loadUrl("https://beastacademy.com/school")
-    }
-
-    override fun onResume() {
-        super.onResume()
-
-        // Use WindowInsetsController to hide status and navigation bars (instead of systemUiVisibility)
-        val windowInsetsController = window.insetsController
-        windowInsetsController?.hide(WindowInsets.Type.statusBars() or WindowInsets.Type.navigationBars())
     }
 }
