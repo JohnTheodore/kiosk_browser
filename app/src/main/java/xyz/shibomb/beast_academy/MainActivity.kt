@@ -7,7 +7,6 @@ import android.view.View
 import android.view.WindowInsets
 import android.webkit.WebView
 import android.webkit.WebViewClient
-import xyz.shibomb.beast_academy.R
 
 class MainActivity : Activity() {
 
@@ -55,14 +54,5 @@ class MainActivity : Activity() {
         // Use WindowInsetsController to hide status and navigation bars (instead of systemUiVisibility)
         val windowInsetsController = window.insetsController
         windowInsetsController?.hide(WindowInsets.Type.statusBars() or WindowInsets.Type.navigationBars())
-    }
-
-    override fun onBackPressed() {
-        if (myWebView.canGoBack()) {
-            myWebView.goBack()  // Go back in WebView history
-        } else {
-            // Call the super method to use the default back button behavior
-            super.onBackPressed()
-        }
     }
 }
