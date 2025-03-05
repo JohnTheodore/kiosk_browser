@@ -1,4 +1,4 @@
-package xyz.shibomb.kioskbrowser
+package xyz.shibomb.beast_academy
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("xyz.shibomb.kioskbrowser", appContext.packageName)
+        assertEquals("xyz.shibomb.beast_academy", appContext.packageName)
     }
 }

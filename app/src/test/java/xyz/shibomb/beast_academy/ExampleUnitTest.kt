@@ -1,4 +1,4 @@
-package xyz.shibomb.kioskbrowser
+package xyz.shibomb.beast_academy
 
 import org.junit.Test
 
