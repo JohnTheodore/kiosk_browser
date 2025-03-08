@@ -12,6 +12,7 @@
         android:theme="@style/Theme.KioskBrowser">
         <activity
             android:exported="true"
+            android:screenOrientation="sensorLandscape"
             android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
