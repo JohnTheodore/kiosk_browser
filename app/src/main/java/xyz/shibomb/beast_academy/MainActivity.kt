@@ -49,7 +49,12 @@ class MainActivity : Activity() {
         // Disable Scroll bounce
         myWebView.overScrollMode = View.OVER_SCROLL_NEVER
 
-        // *** Enabling full screen for Internet Videos when accessed in WebView.
+        // Enable immersive mode, this gets rid of the line at the bottom of the app.
+        window.decorView.systemUiVisibility = (
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                        or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        or View.SYSTEM_UI_FLAG_FULLSCREEN
+                )
 
 
         // Load the URL
